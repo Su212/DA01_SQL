@@ -35,3 +35,20 @@ limit 2;
 select tweet_id
 from tweets
 where length(content)>15
+--bai7
+SELECT activity_date AS day,
+COUNT(DISTINCT user_id) AS active_users
+FROM Activity
+WHERE DATEDIFF('2019-07-27', activity_date) < 30 AND DATEDIFF('2019-07-27', activity_date)>=0
+GROUP BY 1
+--bai8
+select count(employee_id) as number_employee from employees
+where extract(month from joining_date) between 1 and 7
+and extract(year from joining_date)=2022
+--bai9
+select position('a' in first_name)as position from worker
+where first_name='Amitah'
+--bai10
+select substring(title, length(winery)+2,4)
+from winemag_p2 where country='Macedonia'
+
